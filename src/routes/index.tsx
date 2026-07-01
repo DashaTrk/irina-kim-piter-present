@@ -97,20 +97,25 @@ function Index() {
       {/* HERO */}
       <section className="relative border-b border-paper/15 bg-grain">
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 pt-10 md:pt-20 pb-14 md:pb-24 grid grid-cols-12 gap-8 md:gap-12 md:items-center">
-          {/* Photo — vertical oval, centered, with red ring accent */}
+          {/* Photo — perfect circle with red ring accent */}
           <div className="col-span-12 md:col-span-5 md:order-2">
-            <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px] md:max-w-[380px]">
-              {/* outer thin red ring */}
+            <div className="relative mx-auto w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px]">
+              {/* outer red ring */}
               <span
                 aria-hidden
-                className="absolute inset-0 scale-[1.06] rounded-[50%] border border-red/60"
+                className="absolute inset-0 rounded-full border border-red/70"
               />
-              {/* soft red glow */}
+              {/* soft red glow ring */}
               <span
                 aria-hidden
-                className="absolute inset-0 translate-x-4 translate-y-4 rounded-[50%] bg-red/20 blur-xl"
+                className="absolute inset-[-12px] rounded-full bg-red/10 blur-lg"
               />
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[50%] border border-paper/20">
+              {/* thin secondary ring */}
+              <span
+                aria-hidden
+                className="absolute inset-[-6px] rounded-full border border-paper/10"
+              />
+              <div className="relative aspect-square w-full overflow-hidden rounded-full border border-paper/20">
                 <img
                   src={irinaAsset.url}
                   alt="Ирина Ким"
