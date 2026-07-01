@@ -177,7 +177,6 @@ function Index() {
       <section className="border-b border-paper/15 py-16 md:py-24">
         <div className="max-w-[1320px] mx-auto px-5 md:px-12">
           <SectionHead
-            n={s01.number}
             kicker="Аудитория"
             title={<>Кому особенно <span className="italic text-red">полезна</span></>}
           />
@@ -206,7 +205,6 @@ function Index() {
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-16 md:py-28 grid grid-cols-12 gap-8 md:gap-14 relative">
           <div className="col-span-12 md:col-span-5">
             <SectionHead
-              n={s02.number}
               kicker="Результат"
               title={<>Что <span className="italic text-red">получает</span> клиент</>}
             />
@@ -240,7 +238,6 @@ function Index() {
       <section className="border-b border-paper/15 py-16 md:py-28">
         <div className="max-w-[1320px] mx-auto px-5 md:px-12">
           <SectionHead
-            n={s03.number}
             kicker="Метод"
             title={<><span className="italic text-red">Подход</span> Ирины</>}
             align="center"
@@ -283,7 +280,6 @@ function Index() {
         <div className="absolute inset-0 bg-noise opacity-40 mix-blend-overlay pointer-events-none" />
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-16 md:py-28 relative">
           <SectionHead
-            n={s04.number}
             kicker="Преимущества"
             title={<>Сильные <span className="italic">стороны</span></>}
             invert
