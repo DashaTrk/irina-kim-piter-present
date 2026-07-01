@@ -250,27 +250,27 @@ function Index() {
             align="center"
           />
           <div className="mt-14 md:mt-20 relative max-w-3xl mx-auto">
-            {/* Vertical dashed line */}
+            {/* Vertical line */}
             <div
               aria-hidden
-              className="absolute left-4 md:left-1/2 top-2 bottom-2 w-px bg-[repeating-linear-gradient(to_bottom,rgba(180,18,28,0.6)_0_6px,transparent_6px_14px)]"
+              className="absolute left-4 md:left-1/2 top-2 bottom-2 w-px bg-red/40"
             />
-            <ol className="space-y-10 md:space-y-14">
+            <ol className="space-y-8 md:space-y-10">
               {s03.items.map((it, i) => {
                 const right = i % 2 === 1;
                 return (
                   <li key={i} className="relative pl-14 md:pl-0">
                     <span
                       aria-hidden
-                      className="absolute left-4 md:left-1/2 top-1 -translate-x-1/2 h-4 w-4 rotate-45 bg-red border-2 border-ink shadow-[0_0_0_2px_var(--red)]"
+                      className="absolute left-4 md:left-1/2 top-1.5 -translate-x-1/2 h-3.5 w-3.5 rounded-full bg-red border-2 border-ink ring-2 ring-red/30"
                     />
                     <div
                       className={`md:w-1/2 ${right ? "md:ml-auto md:pl-12 md:text-left" : "md:pr-12 md:text-right"}`}
                     >
-                      <span className="font-editorial italic text-red text-lg tracking-wide">
+                      <span className="inline-block font-editorial italic text-red text-sm tracking-wide mb-2">
                         Шаг {String(i + 1).padStart(2, "0")}
                       </span>
-                      <p className="mt-2 font-editorial text-xl md:text-2xl leading-[1.25] text-paper/95">
+                      <p className="font-sans text-[17px] md:text-[19px] leading-[1.55] text-paper/95 tracking-[-0.01em]">
                         {it}
                       </p>
                     </div>
