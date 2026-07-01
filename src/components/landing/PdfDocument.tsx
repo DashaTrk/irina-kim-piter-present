@@ -62,8 +62,8 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
             {heroCopy.role}. {heroCopy.lead}
           </div>
         </div>
-        <div className="absolute right-14 top-24 w-[260px] overflow-hidden rounded-[50%] border border-paper/20">
-          <img src={irinaAsset.url} alt="" crossOrigin="anonymous" className="w-full aspect-[3/4] object-cover" />
+        <div className="absolute right-14 top-24 w-[260px] aspect-square overflow-hidden rounded-full border border-paper/20">
+          <img src={irinaAsset.url} alt="" crossOrigin="anonymous" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-x-14 bottom-8 flex items-end justify-between text-[10px] uppercase tracking-[0.3em] text-paper/50">
           <span>Ирина Ким · Эксперт по новостройкам СПб</span>
