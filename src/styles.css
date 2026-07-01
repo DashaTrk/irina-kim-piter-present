@@ -177,6 +177,14 @@
   letter-spacing: -0.02em;
 }
 
+@utility font-hand {
+  font-family: var(--font-hand);
+}
+
+@utility font-attribution {
+  font-family: var(--font-attribution);
+}
+
 @utility bg-grain {
   background-image:
     radial-gradient(circle at 20% 10%, color-mix(in srgb, var(--red-deep) 22%, transparent), transparent 45%),
