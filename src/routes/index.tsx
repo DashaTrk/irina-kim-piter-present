@@ -97,21 +97,26 @@ function Index() {
       {/* HERO */}
       <section className="relative border-b border-paper/15 bg-grain">
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 pt-10 md:pt-20 pb-14 md:pb-24 grid grid-cols-12 gap-8 md:gap-12 md:items-center">
-          {/* Photo — centered on mobile, framed with red corner marks */}
+          {/* Photo — arched shape, no corner marks, with soft red offset panel */}
           <div className="col-span-12 md:col-span-5 md:order-2">
-            <div className="relative mx-auto w-full max-w-[360px] md:max-w-none">
-              {/* corner marks */}
-              <span aria-hidden className="absolute -top-2 -left-2 h-5 w-5 border-t-2 border-l-2 border-red" />
-              <span aria-hidden className="absolute -top-2 -right-2 h-5 w-5 border-t-2 border-r-2 border-red" />
-              <span aria-hidden className="absolute -bottom-2 -left-2 h-5 w-5 border-b-2 border-l-2 border-red" />
-              <span aria-hidden className="absolute -bottom-2 -right-2 h-5 w-5 border-b-2 border-r-2 border-red" />
-              <div className="relative aspect-[4/5] w-full overflow-hidden">
+            <div className="relative mx-auto w-full max-w-[340px] md:max-w-[420px]">
+              {/* offset red panel behind */}
+              <span
+                aria-hidden
+                className="absolute inset-0 translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 bg-red/80 rounded-t-full"
+              />
+              {/* thin outline behind, opposite offset */}
+              <span
+                aria-hidden
+                className="absolute inset-0 -translate-x-3 -translate-y-3 md:-translate-x-4 md:-translate-y-4 border border-paper/30 rounded-t-full"
+              />
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-full">
                 <img
                   src={irinaAsset.url}
                   alt="Ирина Ким"
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
               </div>
             </div>
           </div>
