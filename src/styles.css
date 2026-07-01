@@ -164,6 +164,7 @@
   --color-milk: var(--milk);
   --color-red: var(--red);
   --color-red-deep: var(--red-deep);
+  --color-red-bg: var(--red-bg);
 }
 
 @utility font-editorial {
