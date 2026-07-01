@@ -367,7 +367,7 @@ function Index() {
               </div>
 
               {/* Intro phrase */}
-              <p className="text-[14px] md:text-base italic font-attribution text-ink/50 mb-6 md:mb-8 leading-relaxed">
+              <p className="text-[18px] md:text-[22px] italic font-attribution text-ink/70 mb-6 md:mb-8 leading-[1.4]">
                 {quote.title}
               </p>
 
