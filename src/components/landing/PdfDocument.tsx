@@ -20,17 +20,12 @@ function PageChrome({ page, total }: { page: number; total: number }) {
   );
 }
 
-function SectionPage({ n, title, items, page, total }: { n: string; title: string; items: string[]; page: number; total: number }) {
+function SectionPage({ title, items, page, total }: { title: string; items: string[]; page: number; total: number }) {
   return (
     <div data-pdf-page data-pdf-bg="#ffffff" className={`${PAGE} bg-paper text-ink px-14 pt-16`}>
-      <div className="flex items-baseline gap-6">
-        <span className="font-editorial text-[110px] leading-none text-red">{n}</span>
-        <div className="flex-1">
-          <div className="text-[10px] uppercase tracking-[0.35em] text-ink/60">Раздел {n}</div>
-          <h2 className="font-editorial text-[42px] leading-[1.05] mt-2">{title}</h2>
-        </div>
+      <div className="border-b border-ink/10 pb-6">
+        <h2 className="font-editorial text-[48px] leading-[1.05] mt-2">{title}</h2>
       </div>
-      <Rule className="mt-10" />
       <ol className="mt-10 space-y-6">
         {items.map((it, i) => (
           <li key={i} className="flex gap-6 items-baseline">
@@ -95,12 +90,11 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
       </div>
 
       {sections.map((s) => (
-        <SectionPage key={s.number} n={s.number} title={s.title} items={s.items} page={nextPage()} total={total} />
+        <SectionPage key={s.number} title={s.title} items={s.items} page={nextPage()} total={total} />
       ))}
 
       {/* Quote */}
       <div data-pdf-page data-pdf-bg="#b4121c" className={`${PAGE} bg-red text-paper px-16 pt-20`}>
-        <div className="text-[11px] uppercase tracking-[0.4em] text-paper/70">Раздел {quote.number}</div>
         <div className="font-editorial text-[130px] leading-none mt-6 opacity-30">“</div>
         <p className="font-editorial italic text-[38px] leading-[1.25] max-w-[640px] -mt-6">
           {quote.body}
@@ -120,29 +114,24 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
         <h2 className="font-editorial text-[64px] leading-[1.02]">
           Давайте <span className="italic text-red">познакомимся</span>
         </h2>
-        <div className="mt-12 flex gap-10 items-start">
-          <div className="w-[220px] h-[280px] overflow-hidden shrink-0">
-            <img src={irinaAsset.url} alt="" crossOrigin="anonymous" className="w-full h-full object-cover" />
-          </div>
-          <div className="flex-1 pt-2">
-            <div className="font-editorial text-[32px]">{contacts.name}</div>
-            <div className="text-[12px] uppercase tracking-[0.3em] text-ink/60 mt-1">{contacts.role}</div>
-            <Rule className="mt-8" />
-            <dl className="mt-8 space-y-6 text-[17px]">
-              <div className="flex justify-between gap-6">
-                <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Телефон</dt>
-                <dd className="flex-1 font-editorial text-[22px]">{contacts.phone}</dd>
-              </div>
-              <div className="flex justify-between gap-6">
-                <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Instagram</dt>
-                <dd className="flex-1 font-editorial text-[22px]">{contacts.instagram}</dd>
-              </div>
-              <div className="flex justify-between gap-6">
-                <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Telegram</dt>
-                <dd className="flex-1 font-editorial text-[22px]">{contacts.telegram}</dd>
-              </div>
-            </dl>
-          </div>
+        <div className="mt-12 max-w-2xl">
+          <div className="font-editorial text-[32px]">{contacts.name}</div>
+          <div className="text-[12px] uppercase tracking-[0.3em] text-ink/60 mt-1">{contacts.role}</div>
+          <Rule className="mt-8" />
+          <dl className="mt-8 space-y-6 text-[17px]">
+            <div className="flex justify-between gap-6">
+              <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Телефон</dt>
+              <dd className="flex-1 font-editorial text-[22px]">{contacts.phone}</dd>
+            </div>
+            <div className="flex justify-between gap-6">
+              <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Instagram</dt>
+              <dd className="flex-1 font-editorial text-[22px]">{contacts.instagram}</dd>
+            </div>
+            <div className="flex justify-between gap-6">
+              <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Telegram</dt>
+              <dd className="flex-1 font-editorial text-[22px]">{contacts.telegram}</dd>
+            </div>
+          </dl>
         </div>
         <PageChrome page={nextPage()} total={total} />
       </div>

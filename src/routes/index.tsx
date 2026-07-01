@@ -11,13 +11,11 @@ export const Route = createFileRoute("/")({
 
 /** Reusable section header — red kicker + big italic accent. */
 function SectionHead({
-  n,
   kicker,
   title,
   align = "left",
   invert = false,
 }: {
-  n: string;
   kicker: string;
   title: React.ReactNode;
   align?: "left" | "center";
@@ -33,8 +31,7 @@ function SectionHead({
         }`}
       >
         <span className={`h-px w-8 ${rule}`} />
-        <span>Раздел {n}</span>
-        <span className={`h-px w-8 ${rule}`} />
+        <span>{kicker}</span>
       </div>
       <h2 className="font-editorial text-[34px] sm:text-5xl md:text-6xl leading-[1.02] mt-5 md:mt-6">
         {title}
@@ -111,10 +108,6 @@ function Index() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" />
               </div>
-              <div className="mt-4 flex items-center justify-between text-[9px] uppercase tracking-[0.35em] text-paper/55">
-                <span>Санкт-Петербург</span>
-                <span className="text-red">Portrait / 2026</span>
-              </div>
             </div>
           </div>
 
@@ -180,7 +173,6 @@ function Index() {
       <section className="border-b border-paper/15 py-16 md:py-24">
         <div className="max-w-[1320px] mx-auto px-5 md:px-12">
           <SectionHead
-            n={s01.number}
             kicker="Аудитория"
             title={<>Кому особенно <span className="italic text-red">полезна</span></>}
           />
@@ -209,7 +201,6 @@ function Index() {
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-16 md:py-28 grid grid-cols-12 gap-8 md:gap-14 relative">
           <div className="col-span-12 md:col-span-5">
             <SectionHead
-              n={s02.number}
               kicker="Результат"
               title={<>Что <span className="italic text-red">получает</span> клиент</>}
             />
@@ -243,7 +234,6 @@ function Index() {
       <section className="border-b border-paper/15 py-16 md:py-28">
         <div className="max-w-[1320px] mx-auto px-5 md:px-12">
           <SectionHead
-            n={s03.number}
             kicker="Метод"
             title={<><span className="italic text-red">Подход</span> Ирины</>}
             align="center"
@@ -286,7 +276,6 @@ function Index() {
         <div className="absolute inset-0 bg-noise opacity-40 mix-blend-overlay pointer-events-none" />
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-16 md:py-28 relative">
           <SectionHead
-            n={s04.number}
             kicker="Преимущества"
             title={<>Сильные <span className="italic">стороны</span></>}
             invert
@@ -309,7 +298,7 @@ function Index() {
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-20 md:py-36 relative">
           <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red mb-8">
             <span className="h-px w-8 bg-red" />
-            <span>Раздел {quote.number} · Рекомендация</span>
+            <span>Рекомендация</span>
           </div>
           <div className="grid grid-cols-12 gap-6 md:gap-10">
             <div className="col-span-2 md:col-span-2">
@@ -350,24 +339,8 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-12 md:mt-16 grid grid-cols-12 gap-8 md:gap-12 items-start">
-            <div className="col-span-12 md:col-span-5">
-              <div className="relative mx-auto w-full max-w-[340px]">
-                <span aria-hidden className="absolute -top-2 -left-2 h-5 w-5 border-t-2 border-l-2 border-red" />
-                <span aria-hidden className="absolute -bottom-2 -right-2 h-5 w-5 border-b-2 border-r-2 border-red" />
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <img src={irinaAsset.url} alt="Ирина Ким" className="w-full h-full object-cover object-center" />
-                </div>
-                <div className="mt-4 text-center">
-                  <div className="font-editorial text-2xl md:text-3xl">{contacts.name}</div>
-                  <div className="text-[10px] uppercase tracking-[0.35em] text-paper/60 mt-2">
-                    {contacts.role}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <ul className="col-span-12 md:col-span-7 divide-y divide-paper/15 border-y border-paper/15">
+          <div className="mt-12 md:mt-16 max-w-3xl mx-auto">
+            <ul className="divide-y divide-paper/15 border-y border-paper/15">
               {[
                 { label: "Телефон", value: contacts.phone, href: contacts.phoneHref, ext: false },
                 { label: "Instagram", value: contacts.instagram, href: contacts.instagramHref, ext: true },
