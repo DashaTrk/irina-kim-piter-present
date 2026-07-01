@@ -103,8 +103,8 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
               <div className="mt-10 grid grid-cols-2 gap-5">
                 {s.items.map((it, i) => (
                   <div key={i} className="relative">
-                    <span aria-hidden className="absolute inset-[-18px] bg-[radial-gradient(circle_at_center,rgba(10,10,10,0.6)_0%,transparent_70%)] blur-2xl" />
-                    <div className="relative bg-[radial-gradient(circle_at_center,rgba(10,10,10,0.95)_0%,rgba(10,10,10,0.6)_70%,rgba(10,10,10,0.25)_100%)] border border-paper/15 p-6">
+                    <span aria-hidden className="absolute inset-[-18px] card-dissolve-glow blur-2xl" />
+                    <div className="relative card-dissolve border border-paper/15 p-6">
                       <div className="flex gap-4">
                         <span className="font-editorial italic text-red text-2xl">{String(i + 1).padStart(2, "0")}</span>
                         <p className="text-[16px] leading-[1.5] text-paper pt-1">{it}</p>
