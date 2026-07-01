@@ -282,7 +282,7 @@ function Index() {
       </section>
 
       {/* 04 — RED PANEL: "Сильные стороны" */}
-      <section className="relative bg-red text-paper overflow-hidden">
+      <section className="relative bg-red-bg text-paper overflow-hidden">
         <div className="absolute inset-0 bg-noise opacity-40 mix-blend-overlay pointer-events-none" />
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-16 md:py-28 relative">
           <SectionHead
