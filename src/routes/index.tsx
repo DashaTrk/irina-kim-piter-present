@@ -161,7 +161,8 @@ function Index() {
           <h2 className="font-editorial text-[36px] sm:text-5xl md:text-7xl leading-[1.02] max-w-4xl">
             Квартира — не про <span className="italic">метры</span>.
             <br />
-            Это про <span className="italic text-red">образ жизни</span>.
+            Это про <span className="italic text-red">образ жизни</span>
+            <span className="text-red">.</span>
           </h2>
           <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-8 md:gap-10">
             {[
