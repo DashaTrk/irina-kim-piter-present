@@ -173,9 +173,10 @@ function Index() {
             <span className="h-px w-8 bg-red" />
           </div>
           <h2 className="font-editorial text-center text-[36px] sm:text-5xl md:text-7xl leading-[1.02] max-w-4xl mx-auto">
-            Квартира — не про <span className="italic">метры</span>.
-            <br />
-            Это про <span className="italic text-red">образ жизни</span>
+            Квартира — не про <span className="italic">метры</span>,
+            <br className="hidden md:block" />
+            {" "}
+            <span className="italic text-red">а про образ жизни</span>
             <span className="text-red">.</span>
           </h2>
           <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-8 md:gap-10 text-center md:text-left">
@@ -417,7 +418,7 @@ function Index() {
                     href={c.href}
                     target={c.ext ? "_blank" : undefined}
                     rel={c.ext ? "noopener noreferrer" : undefined}
-                    className="group grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-5 md:py-7 hover:text-red transition-colors"
+                    className="group flex items-center gap-4 py-5 md:py-7 hover:text-red transition-colors"
                   >
                     <div className="min-w-0">
                       <span className="text-[10px] uppercase tracking-[0.35em] text-paper/50 group-hover:text-red/80 block">
@@ -427,12 +428,6 @@ function Index() {
                         {c.value}
                       </span>
                     </div>
-                    <span
-                      aria-hidden
-                      className="shrink-0 flex items-center justify-center h-10 w-10 border border-paper/25 group-hover:border-red group-hover:text-red text-paper/60 font-editorial italic transition-colors"
-                    >
-                      →
-                    </span>
                   </a>
                 </li>
               ))}
