@@ -372,7 +372,7 @@ function Index() {
               </p>
 
               {/* Main quote */}
-              <blockquote className="font-hand text-[28px] sm:text-[34px] md:text-[48px] leading-[1.25] text-ink">
+              <blockquote className="font-hand italic text-[28px] sm:text-[34px] md:text-[44px] leading-[1.35] text-ink">
                 {quote.body}
               </blockquote>
 
