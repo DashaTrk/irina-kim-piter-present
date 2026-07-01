@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import irinaAsset from "@/assets/irina.jpg.asset.json";
-import { PdfDocument } from "@/components/landing/PdfDocument";
 import { generateLandingPdf } from "@/lib/generate-pdf";
 import { contacts, heroCopy, quote, sections } from "@/lib/landing-content";
 
@@ -74,14 +73,14 @@ function SectionIndex() {
 }
 
 function Index() {
-  const pdfRef = useRef<HTMLDivElement>(null);
+  const mainRef = useRef<HTMLElement>(null);
   const [loading, setLoading] = useState(false);
 
   const handleDownload = async () => {
-    if (!pdfRef.current || loading) return;
+    if (!mainRef.current || loading) return;
     setLoading(true);
     try {
-      await generateLandingPdf(pdfRef.current, "Irina-Kim.pdf");
+      await generateLandingPdf(mainRef.current, "Irina-Kim.pdf");
     } catch (e) {
       console.error(e);
       alert("Не удалось сгенерировать PDF. Попробуйте ещё раз.");
@@ -93,7 +92,7 @@ function Index() {
   const [s01, s02, s03, s04] = sections;
 
   return (
-    <main className="min-h-screen bg-ink text-paper font-sans overflow-x-hidden selection:bg-red selection:text-paper">
+    <main ref={mainRef} className="min-h-screen bg-ink text-paper font-sans overflow-x-hidden selection:bg-red selection:text-paper">
       {/* Top bar — intentionally empty */}
       <header className="border-b border-paper/15 bg-ink/95 backdrop-blur sticky top-0 z-30">
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-3.5 md:py-4 h-[44px]" />
@@ -435,6 +434,7 @@ function Index() {
           <button
             onClick={handleDownload}
             disabled={loading}
+            data-pdf-hide
             className="group inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.35em] text-paper/45 hover:text-red transition-colors disabled:opacity-50"
           >
             <span className="h-px w-6 bg-current" />
@@ -448,21 +448,6 @@ function Index() {
           </div>
         </div>
       </footer>
-
-      {/* Offscreen PDF document */}
-      <div
-        aria-hidden
-        style={{
-          position: "fixed",
-          left: "-10000px",
-          top: 0,
-          width: "794px",
-          pointerEvents: "none",
-          opacity: 0,
-        }}
-      >
-        <PdfDocument ref={pdfRef} />
-      </div>
     </main>
   );
 }
