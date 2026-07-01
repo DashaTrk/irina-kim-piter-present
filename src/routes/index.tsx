@@ -97,26 +97,26 @@ function Index() {
       {/* HERO */}
       <section className="relative border-b border-paper/15 bg-grain">
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 pt-10 md:pt-20 pb-14 md:pb-24 grid grid-cols-12 gap-8 md:gap-12 md:items-center">
-          {/* Photo — arched shape, no corner marks, with soft red offset panel */}
+          {/* Photo — vertical oval, centered, with red ring accent */}
           <div className="col-span-12 md:col-span-5 md:order-2">
-            <div className="relative mx-auto w-full max-w-[340px] md:max-w-[420px]">
-              {/* offset red panel behind */}
+            <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px] md:max-w-[380px]">
+              {/* outer thin red ring */}
               <span
                 aria-hidden
-                className="absolute inset-0 translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 bg-red/80 rounded-t-full"
+                className="absolute inset-0 scale-[1.06] rounded-[50%] border border-red/60"
               />
-              {/* thin outline behind, opposite offset */}
+              {/* soft red glow */}
               <span
                 aria-hidden
-                className="absolute inset-0 -translate-x-3 -translate-y-3 md:-translate-x-4 md:-translate-y-4 border border-paper/30 rounded-t-full"
+                className="absolute inset-0 translate-x-4 translate-y-4 rounded-[50%] bg-red/20 blur-xl"
               />
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-full">
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[50%] border border-paper/20">
                 <img
                   src={irinaAsset.url}
                   alt="Ирина Ким"
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent" />
               </div>
             </div>
           </div>
