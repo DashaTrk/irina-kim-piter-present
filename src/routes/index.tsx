@@ -434,6 +434,7 @@ function Index() {
           <button
             onClick={handleDownload}
             disabled={loading}
+            data-pdf-hide
             className="group inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.35em] text-paper/45 hover:text-red transition-colors disabled:opacity-50"
           >
             <span className="h-px w-6 bg-current" />
