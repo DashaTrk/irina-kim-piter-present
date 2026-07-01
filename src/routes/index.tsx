@@ -334,38 +334,55 @@ function Index() {
       {/* 05 — QUOTE / testimonial */}
       <section className="bg-milk text-ink relative overflow-hidden">
         <div className="max-w-[1120px] mx-auto px-5 md:px-12 py-20 md:py-32 relative">
-          <div className="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red-bg mb-10 md:mb-14">
-            <span className="h-px w-8 bg-red-bg" />
-            <span>Рекомендация</span>
-            <span className="h-px w-8 bg-red-bg" />
-          </div>
-
-          <div className="relative max-w-4xl mx-auto bg-ink text-paper p-8 md:p-14 lg:p-16 shadow-2xl">
-            <span
+          <div className="max-w-4xl mx-auto bg-paper relative overflow-hidden shadow-2xl border-t-[6px] border-red-bg">
+            {/* Decorative background quote mark */}
+            <div
               aria-hidden
-              className="absolute -top-3 left-6 md:left-10 font-editorial italic text-red-bg text-[100px] md:text-[160px] leading-[0.7] select-none"
+              className="absolute top-0 right-0 -mt-6 -mr-6 md:-mt-8 md:-mr-8 text-red-bg/[0.06] pointer-events-none select-none"
             >
-              “
-            </span>
-
-            <p className="text-[13px] md:text-sm uppercase tracking-[0.3em] text-paper/60 mb-8 md:mb-10 pt-10 md:pt-12">
-              {quote.title}
-            </p>
-
-            <blockquote className="relative font-editorial italic text-[24px] sm:text-[30px] md:text-[42px] leading-[1.25] text-paper">
-              {quote.body}
-            </blockquote>
-
-            <div className="mt-10 md:mt-12 flex items-center justify-between gap-4 border-t border-paper/15 pt-6">
-              <span className="text-[10px] uppercase tracking-[0.35em] text-paper/60">
-                Личная рекомендация
-              </span>
-              <span
-                aria-hidden
-                className="font-editorial italic text-red-bg text-[48px] md:text-[64px] leading-none"
+              <svg
+                width="120"
+                height="120"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-24 h-24 md:w-36 md:h-36"
               >
-                ”
-              </span>
+                <path d="M14.017 21L14.017 18C14.017 16.8954 14.9125 16 16.0171 16H19.0171V14.0171L14.0171 14.0171L14.0171 10.0171L20.0171 10.0171L20.0171 18C20.0171 20.2091 18.2262 22 16.0171 22L14.0171 22L14.017 21ZM4.0171 21L4.0171 18C4.0171 16.8954 4.9125 16 6.0171 16H9.0171V14.0171L4.0171 14.0171L4.0171 10.0171L10.0171 10.0171L10.0171 18C10.0171 20.2091 8.2262 22 6.0171 22L4.0171 22L4.0171 21Z" />
+              </svg>
+            </div>
+
+            {/* Red accent corner */}
+            <div
+              aria-hidden
+              className="absolute bottom-0 left-0 w-24 h-24 md:w-32 md:h-32 bg-red-bg/[0.04] rounded-tr-full -ml-10 -mb-10"
+            />
+
+            <div className="relative z-10 p-8 md:p-14 lg:p-16">
+              {/* Header label */}
+              <div className="flex items-center gap-3 mb-8 md:mb-10">
+                <span className="h-px w-10 bg-red-bg" />
+                <span className="text-[10px] md:text-[11px] uppercase tracking-[0.35em] font-semibold text-red-bg">
+                  Рекомендация
+                </span>
+              </div>
+
+              {/* Intro phrase */}
+              <p className="text-[14px] md:text-base italic text-ink/50 mb-6 md:mb-8 leading-relaxed">
+                {quote.title}
+              </p>
+
+              {/* Main quote */}
+              <blockquote className="font-editorial text-[24px] sm:text-[30px] md:text-[44px] leading-[1.3] text-ink">
+                {quote.body}
+              </blockquote>
+
+              {/* Signature */}
+              <div className="mt-10 md:mt-12 pt-6 md:pt-8 border-t border-ink/10 flex flex-col items-end">
+                <span className="text-[10px] md:text-[11px] uppercase tracking-[0.35em] font-semibold text-red-bg">
+                  Личная рекомендация
+                </span>
+                <span className="h-[3px] w-12 md:w-16 bg-red-bg mt-2" />
+              </div>
             </div>
           </div>
         </div>
