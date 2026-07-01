@@ -167,17 +167,18 @@ function Index() {
       <section className="border-b border-paper/15 relative overflow-hidden">
         <span aria-hidden className="pointer-events-none absolute -top-20 -right-20 text-red/[0.06] font-editorial text-[380px] leading-none select-none">К</span>
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-16 md:py-28 relative">
-          <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red mb-6">
+          <div className="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red mb-6">
             <span className="h-px w-8 bg-red" />
             <span>Философия</span>
+            <span className="h-px w-8 bg-red" />
           </div>
-          <h2 className="font-editorial text-[36px] sm:text-5xl md:text-7xl leading-[1.02] max-w-4xl">
+          <h2 className="font-editorial text-center text-[36px] sm:text-5xl md:text-7xl leading-[1.02] max-w-4xl mx-auto">
             Квартира — не про <span className="italic">метры</span>.
             <br />
             Это про <span className="italic text-red">образ жизни</span>
             <span className="text-red">.</span>
           </h2>
-          <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-8 md:gap-10">
+          <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-8 md:gap-10 text-center md:text-left">
             {[
               { k: "01", t: "Разбор жизни, не только объекта", d: "Семья, работа, дети, маршруты, привычки и окружение — всё это входит в подбор." },
               { k: "02", t: "Стратегия под задачу", d: "Сценарии покупки, расчёты и сравнение объектов — чтобы выбор был обоснованным." },
