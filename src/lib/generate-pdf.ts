@@ -20,6 +20,11 @@ export async function generateLandingPdf(el: HTMLElement, filename = "Irina-Kim.
   el.style.maxWidth = `${MOBILE_WIDTH}px`;
   el.style.margin = "0 auto";
 
+  // Hide elements marked as PDF-invisible (e.g. the download button itself).
+  const hidden = Array.from(el.querySelectorAll<HTMLElement>("[data-pdf-hide]"));
+  const prevVis = hidden.map((h) => h.style.visibility);
+  hidden.forEach((h) => (h.style.visibility = "hidden"));
+
   let canvas: HTMLCanvasElement;
   try {
     canvas = await html2canvas(el, {
@@ -34,6 +39,7 @@ export async function generateLandingPdf(el: HTMLElement, filename = "Irina-Kim.
     el.style.width = prev.width;
     el.style.maxWidth = prev.maxWidth;
     el.style.margin = prev.margin;
+    hidden.forEach((h, i) => (h.style.visibility = prevVis[i]));
   }
 
   const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
