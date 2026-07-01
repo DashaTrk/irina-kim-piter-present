@@ -86,8 +86,9 @@
   --ink: #0a0a0a;
   --paper: #ffffff;
   --milk: #f5f2ed;
-  --red: #b4121c;
-  --red-deep: #8b0e15;
+  --red: #e31b2c;
+  --red-deep: #700b11;
+  --red-bg: #5c090e;
 
   --font-serif: "Playfair Display", "Times New Roman", serif;
   --font-sans: "Inter", system-ui, sans-serif;
