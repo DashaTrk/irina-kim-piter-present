@@ -108,10 +108,6 @@ function Index() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" />
               </div>
-              <div className="mt-4 flex items-center justify-between text-[9px] uppercase tracking-[0.35em] text-paper/55">
-                <span>Санкт-Петербург</span>
-                <span className="text-red">Portrait / 2026</span>
-              </div>
             </div>
           </div>
 
@@ -302,7 +298,7 @@ function Index() {
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-20 md:py-36 relative">
           <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red mb-8">
             <span className="h-px w-8 bg-red" />
-            <span>Раздел {quote.number} · Рекомендация</span>
+            <span>Рекомендация</span>
           </div>
           <div className="grid grid-cols-12 gap-6 md:gap-10">
             <div className="col-span-2 md:col-span-2">
