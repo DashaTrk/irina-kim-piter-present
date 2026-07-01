@@ -299,20 +299,30 @@ function Index() {
       {/* 04 — RED PANEL: "Сильные стороны" */}
       <section className="relative bg-red-bg text-paper overflow-hidden">
         <div className="absolute inset-0 bg-noise opacity-40 mix-blend-overlay pointer-events-none" />
+        <div aria-hidden className="absolute -top-20 -left-20 w-[340px] h-[340px] rounded-full bg-ink/35 blur-3xl" />
+        <div aria-hidden className="absolute -bottom-24 -right-24 w-[420px] h-[420px] rounded-full bg-ink/30 blur-3xl" />
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-16 md:py-28 relative">
           <SectionHead
             kicker="Преимущества"
             title={<>Сильные <span className="italic">стороны</span></>}
             invert
           />
-          <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-8 md:gap-y-10">
+          <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {s04.items.map((it, i) => (
-              <div key={i} className="flex gap-5 border-t border-paper/30 pt-5">
-                <span className="font-editorial italic text-[44px] md:text-[56px] leading-none text-paper/95">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="text-[16px] md:text-lg leading-[1.5] text-paper pt-1">{it}</p>
-              </div>
+              <article
+                key={i}
+                className="relative bg-ink border border-paper/10 p-6 md:p-8"
+              >
+                <span className="absolute top-0 left-0 h-[3px] w-16 bg-red" />
+                <div className="flex gap-4 md:gap-5">
+                  <span className="shrink-0 font-editorial italic text-[38px] md:text-[48px] leading-none text-red">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-[15px] md:text-[17px] leading-[1.55] text-paper/95 pt-2">
+                    {it}
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
         </div>

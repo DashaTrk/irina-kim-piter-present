@@ -89,9 +89,36 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
         <PageChrome page={nextPage()} total={total} />
       </div>
 
-      {sections.map((s) => (
-        <SectionPage key={s.number} title={s.title} items={s.items} page={nextPage()} total={total} />
-      ))}
+      {sections.map((s) => {
+        const page = nextPage();
+        if (s.title === "Сильные стороны") {
+          return (
+            <div key={s.number} data-pdf-page data-pdf-bg="#7f0905" className={`${PAGE} bg-red-bg text-paper px-14 pt-16`}>
+              <div className="border-b border-paper/20 pb-6">
+                <div className="text-[10px] uppercase tracking-[0.35em] text-paper/70 mb-3">Преимущества</div>
+                <h2 className="font-editorial text-[48px] leading-[1.05] mt-2">
+                  Сильные <span className="italic">стороны</span>
+                </h2>
+              </div>
+              <div className="mt-10 grid grid-cols-2 gap-5">
+                {s.items.map((it, i) => (
+                  <div key={i} className="bg-ink border border-paper/10 p-6">
+                    <div className="flex gap-4">
+                      <span className="font-editorial italic text-red text-2xl">{String(i + 1).padStart(2, "0")}</span>
+                      <p className="text-[16px] leading-[1.5] text-paper pt-1">{it}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="absolute inset-x-14 bottom-8 flex items-end justify-between text-[10px] uppercase tracking-[0.3em] text-paper/60">
+                <span>Ирина Ким · Эксперт по новостройкам СПб</span>
+                <span>{String(page).padStart(2, "0")} / {String(total).padStart(2, "0")}</span>
+              </div>
+            </div>
+          );
+        }
+        return <SectionPage key={s.number} title={s.title} items={s.items} page={page} total={total} />;
+      })}
 
       {/* Quote */}
       <div data-pdf-page data-pdf-bg="#7f0905" className={`${PAGE} bg-red-bg text-paper px-16 pt-20`}>
