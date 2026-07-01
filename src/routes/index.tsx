@@ -339,24 +339,8 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-12 md:mt-16 grid grid-cols-12 gap-8 md:gap-12 items-start">
-            <div className="col-span-12 md:col-span-5">
-              <div className="relative mx-auto w-full max-w-[340px]">
-                <span aria-hidden className="absolute -top-2 -left-2 h-5 w-5 border-t-2 border-l-2 border-red" />
-                <span aria-hidden className="absolute -bottom-2 -right-2 h-5 w-5 border-b-2 border-r-2 border-red" />
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <img src={irinaAsset.url} alt="Ирина Ким" className="w-full h-full object-cover object-center" />
-                </div>
-                <div className="mt-4 text-center">
-                  <div className="font-editorial text-2xl md:text-3xl">{contacts.name}</div>
-                  <div className="text-[10px] uppercase tracking-[0.35em] text-paper/60 mt-2">
-                    {contacts.role}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <ul className="col-span-12 md:col-span-7 divide-y divide-paper/15 border-y border-paper/15">
+          <div className="mt-12 md:mt-16 max-w-3xl mx-auto">
+            <ul className="divide-y divide-paper/15 border-y border-paper/15">
               {[
                 { label: "Телефон", value: contacts.phone, href: contacts.phoneHref, ext: false },
                 { label: "Instagram", value: contacts.instagram, href: contacts.instagramHref, ext: true },
