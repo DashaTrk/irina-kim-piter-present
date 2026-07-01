@@ -320,27 +320,27 @@ function Index() {
       {/* 05 — QUOTE on milk */}
       <section className="bg-milk text-ink relative overflow-hidden">
         <div className="max-w-[1120px] mx-auto px-5 md:px-12 py-20 md:py-32 relative">
-          <div className="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red mb-10 md:mb-14 text-center">
-            <span className="h-px w-8 bg-red" />
+          <div className="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red-bg mb-10 md:mb-14 text-center">
+            <span className="h-px w-8 bg-red-bg" />
             <span>Рекомендация</span>
-            <span className="h-px w-8 bg-red" />
+            <span className="h-px w-8 bg-red-bg" />
           </div>
 
           <div className="relative">
             <span
               aria-hidden
-              className="pointer-events-none absolute -top-10 md:-top-16 left-0 md:-left-6 font-editorial italic text-red/90 text-[140px] md:text-[220px] leading-[0.7] select-none"
+              className="pointer-events-none absolute -top-10 md:-top-16 left-0 md:-left-6 font-editorial italic text-red-bg/90 text-[140px] md:text-[220px] leading-[0.7] select-none"
             >
               “
             </span>
 
-            <div className="relative pl-8 md:pl-16 border-l-2 border-red">
+            <div className="relative pl-8 md:pl-16 border-l-2 border-red-bg">
               <p className="font-editorial italic text-[28px] sm:text-[36px] md:text-[52px] leading-[1.15] text-ink">
-                …она тот, кто может <span className="text-red">помочь тебе</span> в покупке квартиры.
+                …она тот, кто может <span className="text-red-bg">помочь тебе</span> в покупке квартиры.
               </p>
               <div className="mt-8 md:mt-10 grid md:grid-cols-2 gap-6 md:gap-10">
                 <p className="text-[16px] md:text-lg leading-[1.6] text-ink/80">
-                  Чётко, по делу и при этом про то, что подойдёт <em className="not-italic text-red">именно тебе</em>, а не просто вариант квартиры.
+                  Чётко, по делу и при этом про то, что подойдёт <em className="not-italic text-red-bg">именно тебе</em>, а не просто вариант квартиры.
                 </p>
                 <p className="text-[16px] md:text-lg leading-[1.6] text-ink/80">
                   Я работал с Ириной и доверяю ей встречу с тобой. Уже после первой встречи всё станет понятно.
@@ -350,9 +350,9 @@ function Index() {
           </div>
 
           <div className="mt-12 md:mt-16 flex items-center justify-center gap-4 text-[10px] uppercase tracking-[0.35em] text-ink/60">
-            <span className="h-px w-10 bg-red" />
+            <span className="h-px w-10 bg-red-bg" />
             <span>Личная рекомендация</span>
-            <span className="h-px w-10 bg-red" />
+            <span className="h-px w-10 bg-red-bg" />
           </div>
         </div>
       </section>
