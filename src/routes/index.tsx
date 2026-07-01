@@ -161,7 +161,7 @@ function Index() {
       </section>
 
       {/* Static keyword strip */}
-      <KeywordStrip items={["Экспертиза", "Комфорт", "Ипотека", "Стратегия", "Сопровождение", "Постсервис"]} />
+      <SectionIndex />
 
       {/* INTRO manifesto */}
       <section className="border-b border-paper/15 relative overflow-hidden">
