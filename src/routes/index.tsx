@@ -40,18 +40,18 @@ function SectionHead({
   );
 }
 
-/** Static keyword strip — no motion. */
+/** Static keyword strip — high-contrast, readable. */
 function KeywordStrip({ items }: { items: string[] }) {
   return (
     <div className="border-y border-paper/15 bg-ink/60">
-      <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-4 md:py-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center">
+      <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-4 md:py-5 flex flex-wrap items-center justify-center gap-x-6 md:gap-x-8 gap-y-2 text-center">
         {items.map((it, i) => (
-          <span key={it} className="flex items-center gap-x-5">
-            <span className="font-editorial italic text-red/90 text-base md:text-xl">
+          <span key={it} className="flex items-center gap-x-6 md:gap-x-8">
+            <span className="font-sans text-paper/95 text-[13px] md:text-[15px] uppercase tracking-[0.22em] font-medium">
               {it}
             </span>
             {i < items.length - 1 && (
-              <span aria-hidden className="text-red/40 text-xs">◆</span>
+              <span aria-hidden className="text-red text-[10px]">◆</span>
             )}
           </span>
         ))}
