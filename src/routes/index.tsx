@@ -309,8 +309,12 @@ function Index() {
           />
           <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {s04.items.map((it, i) => (
-              <div key={i} className="relative shadow-[0_0_60px_-12px_rgba(0,0,0,0.55)]">
-                <article className="relative bg-gradient-to-b from-ink/95 via-ink/85 to-ink/70 border border-paper/10 p-6 md:p-8">
+              <div key={i} className="relative">
+                <span
+                  aria-hidden
+                  className="absolute inset-[-10px] bg-ink/55 blur-2xl"
+                />
+                <article className="relative bg-gradient-to-b from-ink/90 via-ink/70 to-ink/45 border border-paper/10 p-6 md:p-8">
                   <span className="absolute top-0 left-0 h-[3px] w-16 bg-red" />
                   <div className="flex gap-4 md:gap-5">
                     <span className="shrink-0 font-editorial italic text-[38px] md:text-[48px] leading-none text-red">
