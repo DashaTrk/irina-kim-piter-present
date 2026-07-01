@@ -11,13 +11,11 @@ export const Route = createFileRoute("/")({
 
 /** Reusable section header — red kicker + big italic accent. */
 function SectionHead({
-  n,
   kicker,
   title,
   align = "left",
   invert = false,
 }: {
-  n: string;
   kicker: string;
   title: React.ReactNode;
   align?: "left" | "center";
@@ -33,8 +31,7 @@ function SectionHead({
         }`}
       >
         <span className={`h-px w-8 ${rule}`} />
-        <span>Раздел {n}</span>
-        <span className={`h-px w-8 ${rule}`} />
+        <span>{kicker}</span>
       </div>
       <h2 className="font-editorial text-[34px] sm:text-5xl md:text-6xl leading-[1.02] mt-5 md:mt-6">
         {title}
