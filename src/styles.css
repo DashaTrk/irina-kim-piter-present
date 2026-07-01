@@ -182,3 +182,11 @@
 @utility bg-noise {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
+
+@utility card-dissolve {
+  background: radial-gradient(circle at center, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.6) 70%, rgba(10, 10, 10, 0.25) 100%);
+}
+
+@utility card-dissolve-glow {
+  background: radial-gradient(circle at center, rgba(10, 10, 10, 0.55) 0%, transparent 70%);
+}
