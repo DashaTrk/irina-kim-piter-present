@@ -40,17 +40,22 @@ function SectionHead({
   );
 }
 
-/** Horizontal marquee ticker with red diamond separators. */
-function Ticker({ items }: { items: string[] }) {
-  const line = items.join("   ◆   ");
+/** Static keyword strip — no motion. */
+function KeywordStrip({ items }: { items: string[] }) {
   return (
-    <div className="relative overflow-hidden border-y border-paper/15 bg-ink/60 py-3">
-      <div className="whitespace-nowrap font-editorial italic text-red/90 text-lg md:text-2xl animate-[ticker_38s_linear_infinite]">
-        <span className="px-6">{line}</span>
-        <span className="px-6">{line}</span>
-        <span className="px-6">{line}</span>
+    <div className="border-y border-paper/15 bg-ink/60">
+      <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-4 md:py-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center">
+        {items.map((it, i) => (
+          <span key={it} className="flex items-center gap-x-5">
+            <span className="font-editorial italic text-red/90 text-base md:text-xl">
+              {it}
+            </span>
+            {i < items.length - 1 && (
+              <span aria-hidden className="text-red/40 text-xs">◆</span>
+            )}
+          </span>
+        ))}
       </div>
-      <style>{`@keyframes ticker { from { transform: translateX(0)} to { transform: translateX(-50%)} }`}</style>
     </div>
   );
 }
@@ -112,15 +117,10 @@ function Index() {
           </div>
 
           <div className="col-span-12 md:col-span-7 md:order-1">
-            <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red mb-5 md:mb-7">
-              <span className="h-px w-8 bg-red" />
-              <span>{heroCopy.kicker}</span>
-            </div>
             <h1 className="font-editorial text-[64px] sm:text-[92px] md:text-[148px] leading-[0.9] tracking-[-0.03em]">
               Ирина
               <br />
               <span className="italic text-red">Ким</span>
-              <span className="text-red">.</span>
             </h1>
             <div className="mt-7 md:mt-10 flex items-start gap-4 max-w-xl">
               <span className="mt-2 h-px w-10 bg-red shrink-0" />
@@ -137,8 +137,8 @@ function Index() {
         </div>
       </section>
 
-      {/* Ticker strip */}
-      <Ticker items={["Экспертиза", "Комфорт", "Ипотека", "Стратегия", "Сопровождение", "Постсервис"]} />
+      {/* Static keyword strip */}
+      <KeywordStrip items={["Экспертиза", "Комфорт", "Ипотека", "Стратегия", "Сопровождение", "Постсервис"]} />
 
       {/* INTRO manifesto */}
       <section className="border-b border-paper/15 relative overflow-hidden">
@@ -295,29 +295,40 @@ function Index() {
 
       {/* 05 — QUOTE on milk */}
       <section className="bg-milk text-ink relative overflow-hidden">
-        <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-20 md:py-36 relative">
-          <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red mb-8">
+        <div className="max-w-[1120px] mx-auto px-5 md:px-12 py-20 md:py-32 relative">
+          <div className="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red mb-10 md:mb-14 text-center">
             <span className="h-px w-8 bg-red" />
             <span>Рекомендация</span>
+            <span className="h-px w-8 bg-red" />
           </div>
-          <div className="grid grid-cols-12 gap-6 md:gap-10">
-            <div className="col-span-2 md:col-span-2">
-              <div
-                aria-hidden
-                className="font-editorial italic text-[110px] sm:text-[160px] md:text-[240px] leading-[0.7] text-red select-none"
-              >
-                “
-              </div>
-            </div>
-            <div className="col-span-10 md:col-span-10">
-              <p className="font-editorial italic text-[24px] sm:text-[32px] md:text-5xl leading-[1.22] text-ink">
-                {quote.body}
+
+          <div className="relative">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -top-10 md:-top-16 left-0 md:-left-6 font-editorial italic text-red/90 text-[140px] md:text-[220px] leading-[0.7] select-none"
+            >
+              “
+            </span>
+
+            <div className="relative pl-8 md:pl-16 border-l-2 border-red">
+              <p className="font-editorial italic text-[28px] sm:text-[36px] md:text-[52px] leading-[1.15] text-ink">
+                …она тот, кто может <span className="text-red">помочь тебе</span> в покупке квартиры.
               </p>
-              <div className="mt-8 md:mt-12 flex items-center gap-4 text-[10px] uppercase tracking-[0.35em] text-ink/60">
-                <span className="h-px w-10 bg-red" />
-                <span>{quote.title}</span>
+              <div className="mt-8 md:mt-10 grid md:grid-cols-2 gap-6 md:gap-10">
+                <p className="text-[16px] md:text-lg leading-[1.6] text-ink/80">
+                  Чётко, по делу и при этом про то, что подойдёт <em className="not-italic text-red">именно тебе</em>, а не просто вариант квартиры.
+                </p>
+                <p className="text-[16px] md:text-lg leading-[1.6] text-ink/80">
+                  Я работал с Ириной и доверяю ей встречу с тобой. Уже после первой встречи всё станет понятно.
+                </p>
               </div>
             </div>
+          </div>
+
+          <div className="mt-12 md:mt-16 flex items-center justify-center gap-4 text-[10px] uppercase tracking-[0.35em] text-ink/60">
+            <span className="h-px w-10 bg-red" />
+            <span>Личная рекомендация</span>
+            <span className="h-px w-10 bg-red" />
           </div>
         </div>
       </section>
