@@ -309,20 +309,23 @@ function Index() {
           />
           <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {s04.items.map((it, i) => (
-              <article
-                key={i}
-                className="relative bg-ink border border-paper/10 p-6 md:p-8"
-              >
-                <span className="absolute top-0 left-0 h-[3px] w-16 bg-red" />
-                <div className="flex gap-4 md:gap-5">
-                  <span className="shrink-0 font-editorial italic text-[38px] md:text-[48px] leading-none text-red">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p className="text-[15px] md:text-[17px] leading-[1.55] text-paper/95 pt-2">
-                    {it}
-                  </p>
-                </div>
-              </article>
+              <div key={i} className="relative">
+                <span
+                  aria-hidden
+                  className="absolute inset-[-22px] card-dissolve-glow blur-2xl"
+                />
+                <article className="relative card-dissolve border border-paper/15 p-6 md:p-8">
+                  <span className="absolute top-0 left-0 h-[3px] w-16 bg-red" />
+                  <div className="flex gap-4 md:gap-5">
+                    <span className="shrink-0 font-editorial italic text-[38px] md:text-[48px] leading-none text-red">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-[15px] md:text-[17px] leading-[1.55] text-paper/95 pt-2">
+                      {it}
+                    </p>
+                  </div>
+                </article>
+              </div>
             ))}
           </div>
         </div>
