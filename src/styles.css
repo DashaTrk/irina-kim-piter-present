@@ -86,8 +86,9 @@
   --ink: #0a0a0a;
   --paper: #ffffff;
   --milk: #f5f2ed;
-  --red: #b4121c;
-  --red-deep: #8b0e15;
+  --red: #e31b2c;
+  --red-deep: #700b11;
+  --red-bg: #5c090e;
 
   --font-serif: "Playfair Display", "Times New Roman", serif;
   --font-sans: "Inter", system-ui, sans-serif;
@@ -163,6 +164,7 @@
   --color-milk: var(--milk);
   --color-red: var(--red);
   --color-red-deep: var(--red-deep);
+  --color-red-bg: var(--red-bg);
 }
 
 @utility font-editorial {
@@ -173,8 +175,8 @@
 
 @utility bg-grain {
   background-image:
-    radial-gradient(circle at 20% 10%, rgba(180, 18, 28, 0.08), transparent 45%),
-    radial-gradient(circle at 90% 80%, rgba(180, 18, 28, 0.05), transparent 50%);
+    radial-gradient(circle at 20% 10%, color-mix(in srgb, var(--red-deep) 22%, transparent), transparent 45%),
+    radial-gradient(circle at 90% 80%, color-mix(in srgb, var(--red-deep) 14%, transparent), transparent 50%);
 }
 
 @utility bg-noise {
