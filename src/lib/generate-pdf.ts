@@ -1,5 +1,5 @@
 import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
+import html2canvas from "html2canvas-pro";
 
 // A4 portrait at 96dpi ratio, we use mm units in jsPDF (210x297mm)
 export async function generateLandingPdf(root: HTMLElement, filename = "Irina-Kim.pdf") {
