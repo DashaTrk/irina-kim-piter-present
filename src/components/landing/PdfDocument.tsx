@@ -20,17 +20,12 @@ function PageChrome({ page, total }: { page: number; total: number }) {
   );
 }
 
-function SectionPage({ n, title, items, page, total }: { n: string; title: string; items: string[]; page: number; total: number }) {
+function SectionPage({ title, items, page, total }: { title: string; items: string[]; page: number; total: number }) {
   return (
     <div data-pdf-page data-pdf-bg="#ffffff" className={`${PAGE} bg-paper text-ink px-14 pt-16`}>
-      <div className="flex items-baseline gap-6">
-        <span className="font-editorial text-[110px] leading-none text-red">{n}</span>
-        <div className="flex-1">
-          <div className="text-[10px] uppercase tracking-[0.35em] text-ink/60">Раздел {n}</div>
-          <h2 className="font-editorial text-[42px] leading-[1.05] mt-2">{title}</h2>
-        </div>
+      <div className="border-b border-ink/10 pb-6">
+        <h2 className="font-editorial text-[48px] leading-[1.05] mt-2">{title}</h2>
       </div>
-      <Rule className="mt-10" />
       <ol className="mt-10 space-y-6">
         {items.map((it, i) => (
           <li key={i} className="flex gap-6 items-baseline">
@@ -95,12 +90,11 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
       </div>
 
       {sections.map((s) => (
-        <SectionPage key={s.number} n={s.number} title={s.title} items={s.items} page={nextPage()} total={total} />
+        <SectionPage key={s.number} title={s.title} items={s.items} page={nextPage()} total={total} />
       ))}
 
       {/* Quote */}
       <div data-pdf-page data-pdf-bg="#b4121c" className={`${PAGE} bg-red text-paper px-16 pt-20`}>
-        <div className="text-[11px] uppercase tracking-[0.4em] text-paper/70">Раздел {quote.number}</div>
         <div className="font-editorial text-[130px] leading-none mt-6 opacity-30">“</div>
         <p className="font-editorial italic text-[38px] leading-[1.25] max-w-[640px] -mt-6">
           {quote.body}
