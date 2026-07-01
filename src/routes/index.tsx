@@ -167,17 +167,18 @@ function Index() {
       <section className="border-b border-paper/15 relative overflow-hidden">
         <span aria-hidden className="pointer-events-none absolute -top-20 -right-20 text-red/[0.06] font-editorial text-[380px] leading-none select-none">К</span>
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-16 md:py-28 relative">
-          <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red mb-6">
+          <div className="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red mb-6">
             <span className="h-px w-8 bg-red" />
             <span>Философия</span>
+            <span className="h-px w-8 bg-red" />
           </div>
-          <h2 className="font-editorial text-[36px] sm:text-5xl md:text-7xl leading-[1.02] max-w-4xl">
+          <h2 className="font-editorial text-center text-[36px] sm:text-5xl md:text-7xl leading-[1.02] max-w-4xl mx-auto">
             Квартира — не про <span className="italic">метры</span>.
             <br />
             Это про <span className="italic text-red">образ жизни</span>
             <span className="text-red">.</span>
           </h2>
-          <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-8 md:gap-10">
+          <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-8 md:gap-10 text-center md:text-left">
             {[
               { k: "01", t: "Разбор жизни, не только объекта", d: "Семья, работа, дети, маршруты, привычки и окружение — всё это входит в подбор." },
               { k: "02", t: "Стратегия под задачу", d: "Сценарии покупки, расчёты и сравнение объектов — чтобы выбор был обоснованным." },
@@ -193,12 +194,12 @@ function Index() {
         </div>
       </section>
 
-      {/* 01 — CARDS GRID: "Кому полезна" */}
+      {/* 01 — CARDS GRID: "Кому полезна Ирина" */}
       <section className="border-b border-paper/15 py-16 md:py-24">
         <div className="max-w-[1320px] mx-auto px-5 md:px-12">
           <SectionHead
             kicker="Аудитория"
-            title={<>Кому особенно <span className="italic text-red">полезна</span></>}
+            title={<>Кому особенно полезна <span className="italic text-red">Ирина</span></>}
           />
           <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {s01.items.map((it, i) => (
@@ -319,34 +320,27 @@ function Index() {
 
       {/* 05 — QUOTE on milk */}
       <section className="bg-milk text-ink relative overflow-hidden">
-        <div className="max-w-[1120px] mx-auto px-5 md:px-12 py-20 md:py-32 relative">
-          <div className="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red-bg mb-10 md:mb-14 text-center">
+        <div className="max-w-[1120px] mx-auto px-5 md:px-12 py-20 md:py-32 relative text-center">
+          <div className="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red-bg mb-10 md:mb-14">
             <span className="h-px w-8 bg-red-bg" />
             <span>Рекомендация</span>
             <span className="h-px w-8 bg-red-bg" />
           </div>
 
-          <div className="relative">
+          <p className="text-[13px] md:text-sm uppercase tracking-[0.3em] text-ink/60 mb-8 md:mb-10">
+            {quote.title}
+          </p>
+
+          <div className="relative max-w-4xl mx-auto">
             <span
               aria-hidden
-              className="pointer-events-none absolute -top-10 md:-top-16 left-0 md:-left-6 font-editorial italic text-red-bg/90 text-[140px] md:text-[220px] leading-[0.7] select-none"
+              className="pointer-events-none absolute -top-8 md:-top-14 left-1/2 -translate-x-1/2 font-editorial italic text-red-bg/90 text-[100px] md:text-[160px] leading-[0.7] select-none"
             >
               “
             </span>
-
-            <div className="relative pl-8 md:pl-16 border-l-2 border-red-bg">
-              <p className="font-editorial italic text-[28px] sm:text-[36px] md:text-[52px] leading-[1.15] text-ink">
-                …она тот, кто может <span className="text-red-bg">помочь тебе</span> в покупке квартиры.
-              </p>
-              <div className="mt-8 md:mt-10 grid md:grid-cols-2 gap-6 md:gap-10">
-                <p className="text-[16px] md:text-lg leading-[1.6] text-ink/80">
-                  Чётко, по делу и при этом про то, что подойдёт <em className="not-italic text-red-bg">именно тебе</em>, а не просто вариант квартиры.
-                </p>
-                <p className="text-[16px] md:text-lg leading-[1.6] text-ink/80">
-                  Я работал с Ириной и доверяю ей встречу с тобой. Уже после первой встречи всё станет понятно.
-                </p>
-              </div>
-            </div>
+            <p className="relative pt-16 md:pt-24 font-editorial italic text-[26px] sm:text-[34px] md:text-[46px] leading-[1.2] text-ink">
+              {quote.body}
+            </p>
           </div>
 
           <div className="mt-12 md:mt-16 flex items-center justify-center gap-4 text-[10px] uppercase tracking-[0.35em] text-ink/60">

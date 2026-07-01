@@ -95,12 +95,13 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
 
       {/* Quote */}
       <div data-pdf-page data-pdf-bg="#7f0905" className={`${PAGE} bg-red-bg text-paper px-16 pt-20`}>
-        <div className="font-editorial text-[130px] leading-none mt-6 opacity-30">“</div>
+        <div className="text-[11px] uppercase tracking-[0.35em] text-paper/70 mb-8">Рекомендация</div>
+        <div className="font-editorial text-[130px] leading-none mt-2 opacity-30">“</div>
         <p className="font-editorial italic text-[38px] leading-[1.25] max-w-[640px] -mt-6">
           {quote.body}
         </p>
-        <div className="mt-16 text-[12px] uppercase tracking-[0.35em] text-paper/80">
-          Рекомендация · {quote.title}
+        <div className="mt-12 text-[13px] uppercase tracking-[0.3em] text-paper/80">
+          {quote.title}
         </div>
         <div className="absolute inset-x-14 bottom-8 flex items-end justify-between text-[10px] uppercase tracking-[0.3em] text-paper/60">
           <span>Ирина Ким · Эксперт по новостройкам СПб</span>
