@@ -42,31 +42,11 @@ export async function generateLandingPdf(el: HTMLElement, filename = "Irina-Kim.
     hidden.forEach((h, i) => (h.style.visibility = prevVis[i]));
   }
 
-  const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
-  const pageW = pdf.internal.pageSize.getWidth();
-  const pageH = pdf.internal.pageSize.getHeight();
-
-  // Page slice height in canvas pixels, matching A4 aspect ratio.
-  const sliceHeightPx = Math.floor((canvas.width * pageH) / pageW);
-  const totalPages = Math.ceil(canvas.height / sliceHeightPx);
-
-  for (let i = 0; i < totalPages; i++) {
-    const sy = i * sliceHeightPx;
-    const sh = Math.min(sliceHeightPx, canvas.height - sy);
-
-    const pageCanvas = document.createElement("canvas");
-    pageCanvas.width = canvas.width;
-    pageCanvas.height = sh;
-    const ctx = pageCanvas.getContext("2d")!;
-    ctx.fillStyle = "#0a0a0a";
-    ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
-    ctx.drawImage(canvas, 0, sy, canvas.width, sh, 0, 0, canvas.width, sh);
-
-    const img = pageCanvas.toDataURL("image/jpeg", 0.92);
-    if (i > 0) pdf.addPage();
-    const imgH = (sh * pageW) / canvas.width;
-    pdf.addImage(img, "JPEG", 0, 0, pageW, imgH);
-  }
-
+  // Single tall page — mirrors the mobile canvas as one continuous sheet.
+  const pageW = 210; // mm, mobile width equivalent
+  const pageH = (canvas.height * pageW) / canvas.width;
+  const pdf = new jsPDF({ unit: "mm", format: [pageW, pageH], orientation: "portrait" });
+  const img = canvas.toDataURL("image/jpeg", 0.9);
+  pdf.addImage(img, "JPEG", 0, 0, pageW, pageH);
   pdf.save(filename);
 }
