@@ -161,6 +161,8 @@
 @theme inline {
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
+  --font-hand: var(--font-hand);
+  --font-attribution: var(--font-attribution);
   --color-ink: var(--ink);
   --color-paper: var(--paper);
   --color-milk: var(--milk);
