@@ -75,8 +75,9 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
       <div data-pdf-page data-pdf-bg="#f5f2ed" className={`${PAGE} bg-milk text-ink px-14 pt-24`}>
         <div className="text-[11px] uppercase tracking-[0.4em] text-red mb-8">Введение</div>
         <h2 className="font-editorial text-[56px] leading-[1.05] max-w-[620px]">
-          Квартира — это не про метры.<br />
-          Это про <span className="italic text-red">образ жизни</span>.
+          Квартира — не про <span className="italic">метры</span>,
+          <br />
+          <span className="italic text-red">а про образ жизни</span>.
         </h2>
         <div className="mt-14 grid grid-cols-2 gap-12 max-w-[640px]">
           <p className="text-[17px] leading-[1.6]">
