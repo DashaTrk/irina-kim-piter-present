@@ -367,18 +367,18 @@ function Index() {
               </div>
 
               {/* Intro phrase */}
-              <p className="text-[14px] md:text-base italic text-ink/50 mb-6 md:mb-8 leading-relaxed">
+              <p className="text-[14px] md:text-base italic font-attribution text-ink/50 mb-6 md:mb-8 leading-relaxed">
                 {quote.title}
               </p>
 
               {/* Main quote */}
-              <blockquote className="font-sans font-light text-[24px] sm:text-[30px] md:text-[44px] leading-[1.35] tracking-tight text-ink">
+              <blockquote className="font-hand text-[28px] sm:text-[34px] md:text-[48px] leading-[1.25] text-ink">
                 {quote.body}
               </blockquote>
 
               {/* Signature */}
               <div className="mt-10 md:mt-12 pt-6 md:pt-8 border-t border-ink/10 flex flex-col items-end">
-                <span className="text-[10px] md:text-[11px] uppercase tracking-[0.35em] font-semibold text-red-bg">
+                <span className="text-[12px] md:text-[13px] italic font-attribution text-red-bg">
                   Личная рекомендация
                 </span>
                 <span className="h-[3px] w-12 md:w-16 bg-red-bg mt-2" />
