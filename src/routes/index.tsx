@@ -40,17 +40,22 @@ function SectionHead({
   );
 }
 
-/** Horizontal marquee ticker with red diamond separators. */
-function Ticker({ items }: { items: string[] }) {
-  const line = items.join("   ◆   ");
+/** Static keyword strip — no motion. */
+function KeywordStrip({ items }: { items: string[] }) {
   return (
-    <div className="relative overflow-hidden border-y border-paper/15 bg-ink/60 py-3">
-      <div className="whitespace-nowrap font-editorial italic text-red/90 text-lg md:text-2xl animate-[ticker_38s_linear_infinite]">
-        <span className="px-6">{line}</span>
-        <span className="px-6">{line}</span>
-        <span className="px-6">{line}</span>
+    <div className="border-y border-paper/15 bg-ink/60">
+      <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-4 md:py-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center">
+        {items.map((it, i) => (
+          <span key={it} className="flex items-center gap-x-5">
+            <span className="font-editorial italic text-red/90 text-base md:text-xl">
+              {it}
+            </span>
+            {i < items.length - 1 && (
+              <span aria-hidden className="text-red/40 text-xs">◆</span>
+            )}
+          </span>
+        ))}
       </div>
-      <style>{`@keyframes ticker { from { transform: translateX(0)} to { transform: translateX(-50%)} }`}</style>
     </div>
   );
 }
@@ -112,15 +117,10 @@ function Index() {
           </div>
 
           <div className="col-span-12 md:col-span-7 md:order-1">
-            <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red mb-5 md:mb-7">
-              <span className="h-px w-8 bg-red" />
-              <span>{heroCopy.kicker}</span>
-            </div>
             <h1 className="font-editorial text-[64px] sm:text-[92px] md:text-[148px] leading-[0.9] tracking-[-0.03em]">
               Ирина
               <br />
               <span className="italic text-red">Ким</span>
-              <span className="text-red">.</span>
             </h1>
             <div className="mt-7 md:mt-10 flex items-start gap-4 max-w-xl">
               <span className="mt-2 h-px w-10 bg-red shrink-0" />
@@ -137,8 +137,8 @@ function Index() {
         </div>
       </section>
 
-      {/* Ticker strip */}
-      <Ticker items={["Экспертиза", "Комфорт", "Ипотека", "Стратегия", "Сопровождение", "Постсервис"]} />
+      {/* Static keyword strip */}
+      <KeywordStrip items={["Экспертиза", "Комфорт", "Ипотека", "Стратегия", "Сопровождение", "Постсервис"]} />
 
       {/* INTRO manifesto */}
       <section className="border-b border-paper/15 relative overflow-hidden">
