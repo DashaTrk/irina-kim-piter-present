@@ -312,9 +312,9 @@ function Index() {
               <div key={i} className="relative">
                 <span
                   aria-hidden
-                  className="absolute inset-[-10px] bg-ink/55 blur-2xl"
+                  className="absolute inset-[-20px] bg-ink/70 blur-3xl"
                 />
-                <article className="relative bg-gradient-to-b from-ink/90 via-ink/70 to-ink/45 border border-paper/10 p-6 md:p-8">
+                <article className="relative bg-ink/55 border border-paper/15 p-6 md:p-8">
                   <span className="absolute top-0 left-0 h-[3px] w-16 bg-red" />
                   <div className="flex gap-4 md:gap-5">
                     <span className="shrink-0 font-editorial italic text-[38px] md:text-[48px] leading-none text-red">
