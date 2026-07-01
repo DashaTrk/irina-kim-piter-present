@@ -194,12 +194,12 @@ function Index() {
         </div>
       </section>
 
-      {/* 01 — CARDS GRID: "Кому полезна" */}
+      {/* 01 — CARDS GRID: "Кому полезна Ирина" */}
       <section className="border-b border-paper/15 py-16 md:py-24">
         <div className="max-w-[1320px] mx-auto px-5 md:px-12">
           <SectionHead
             kicker="Аудитория"
-            title={<>Кому особенно <span className="italic text-red">полезна</span></>}
+            title={<>Кому особенно полезна <span className="italic text-red">Ирина</span></>}
           />
           <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {s01.items.map((it, i) => (
