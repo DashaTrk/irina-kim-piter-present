@@ -176,9 +176,9 @@ function Index() {
             Квартира — не про <span className="italic">метры</span>,
             <br className="hidden md:block" />
             {" "}
-            <span className="italic">а про </span>
+            <span className="">а про </span>
             <span className="italic text-red">образ жизни</span>
-            <span className="">.</span>
+            <span className="text-red">.</span>
           </h2>
           <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-8 md:gap-10 text-center md:text-left">
             {[
