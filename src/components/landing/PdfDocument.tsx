@@ -94,7 +94,7 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
       ))}
 
       {/* Quote */}
-      <div data-pdf-page data-pdf-bg="#5c090e" className={`${PAGE} bg-red-bg text-paper px-16 pt-20`}>
+      <div data-pdf-page data-pdf-bg="#a30d19" className={`${PAGE} bg-red-bg text-paper px-16 pt-20`}>
         <div className="font-editorial text-[130px] leading-none mt-6 opacity-30">“</div>
         <p className="font-editorial italic text-[38px] leading-[1.25] max-w-[640px] -mt-6">
           {quote.body}

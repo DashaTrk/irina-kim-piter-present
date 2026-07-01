@@ -40,18 +40,18 @@ function SectionHead({
   );
 }
 
-/** Static keyword strip — no motion. */
+/** Static keyword strip — high-contrast, readable. */
 function KeywordStrip({ items }: { items: string[] }) {
   return (
     <div className="border-y border-paper/15 bg-ink/60">
-      <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-4 md:py-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center">
+      <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-4 md:py-5 flex flex-wrap items-center justify-center gap-x-6 md:gap-x-8 gap-y-2 text-center">
         {items.map((it, i) => (
-          <span key={it} className="flex items-center gap-x-5">
-            <span className="font-editorial italic text-red/90 text-base md:text-xl">
+          <span key={it} className="flex items-center gap-x-6 md:gap-x-8">
+            <span className="font-sans text-paper/95 text-[13px] md:text-[15px] uppercase tracking-[0.22em] font-medium">
               {it}
             </span>
             {i < items.length - 1 && (
-              <span aria-hidden className="text-red/40 text-xs">◆</span>
+              <span aria-hidden className="text-red text-[10px]">◆</span>
             )}
           </span>
         ))}
@@ -161,7 +161,8 @@ function Index() {
           <h2 className="font-editorial text-[36px] sm:text-5xl md:text-7xl leading-[1.02] max-w-4xl">
             Квартира — не про <span className="italic">метры</span>.
             <br />
-            Это про <span className="italic text-red">образ жизни</span>.
+            Это про <span className="italic text-red">образ жизни</span>
+            <span className="text-red">.</span>
           </h2>
           <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-8 md:gap-10">
             {[
@@ -214,7 +215,7 @@ function Index() {
               kicker="Результат"
               title={<>Что <span className="italic text-red">получает</span> клиент</>}
             />
-            <p className="mt-6 md:mt-8 text-[15px] md:text-base leading-[1.65] text-paper/70 max-w-sm">
+            <p className="mt-6 md:mt-8 text-[18px] md:text-[22px] leading-[1.45] text-paper/90 max-w-sm font-editorial">
               Уже на первой встрече формируется ясная картина: районы, ЖК, расчёты и понятный порядок действий.
             </p>
           </div>
@@ -249,27 +250,27 @@ function Index() {
             align="center"
           />
           <div className="mt-14 md:mt-20 relative max-w-3xl mx-auto">
-            {/* Vertical dashed line */}
+            {/* Vertical line */}
             <div
               aria-hidden
-              className="absolute left-4 md:left-1/2 top-2 bottom-2 w-px bg-[repeating-linear-gradient(to_bottom,rgba(180,18,28,0.6)_0_6px,transparent_6px_14px)]"
+              className="absolute left-4 md:left-1/2 top-2 bottom-2 w-px bg-red/40"
             />
-            <ol className="space-y-10 md:space-y-14">
+            <ol className="space-y-8 md:space-y-10">
               {s03.items.map((it, i) => {
                 const right = i % 2 === 1;
                 return (
                   <li key={i} className="relative pl-14 md:pl-0">
                     <span
                       aria-hidden
-                      className="absolute left-4 md:left-1/2 top-1 -translate-x-1/2 h-4 w-4 rotate-45 bg-red border-2 border-ink shadow-[0_0_0_2px_var(--red)]"
+                      className="absolute left-4 md:left-1/2 top-1.5 -translate-x-1/2 h-3.5 w-3.5 rounded-full bg-red border-2 border-ink ring-2 ring-red/30"
                     />
                     <div
                       className={`md:w-1/2 ${right ? "md:ml-auto md:pl-12 md:text-left" : "md:pr-12 md:text-right"}`}
                     >
-                      <span className="font-editorial italic text-red text-lg tracking-wide">
+                      <span className="inline-block font-editorial italic text-red text-sm tracking-wide mb-2">
                         Шаг {String(i + 1).padStart(2, "0")}
                       </span>
-                      <p className="mt-2 font-editorial text-xl md:text-2xl leading-[1.25] text-paper/95">
+                      <p className="font-sans text-[17px] md:text-[19px] leading-[1.55] text-paper/95 tracking-[-0.01em]">
                         {it}
                       </p>
                     </div>
