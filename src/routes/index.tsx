@@ -40,31 +40,31 @@ function SectionHead({
   );
 }
 
-/** Section index strip — clean list of all page blocks. */
+/** Section index strip — clean editorial list of all page blocks. */
 function SectionIndex() {
   const items = [
-    { num: "01", label: "Главная" },
-    { num: "02", label: "Философия" },
-    { num: "03", label: "Аудитория" },
-    { num: "04", label: "Результат" },
-    { num: "05", label: "Метод" },
-    { num: "06", label: "Преимущества" },
-    { num: "07", label: "Рекомендация" },
-    { num: "08", label: "Контакты" },
+    "Главная",
+    "Философия",
+    "Аудитория",
+    "Результат",
+    "Метод",
+    "Преимущества",
+    "Рекомендация",
+    "Контакты",
   ];
 
   return (
     <nav className="border-y border-paper/10 bg-ink">
       <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-5 md:py-6">
-        <div className="flex flex-wrap justify-center gap-x-4 md:gap-x-8 gap-y-3">
-          {items.map((item) => (
-            <div key={item.label} className="flex items-center gap-2">
-              <span className="font-editorial italic text-red text-[13px] md:text-[14px] leading-none">
-                {item.num}
+        <div className="flex flex-wrap justify-center items-center gap-y-3">
+          {items.map((item, i) => (
+            <div key={item} className="flex items-center">
+              <span className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-paper/70 px-3 md:px-4">
+                {item}
               </span>
-              <span className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-paper/70">
-                {item.label}
-              </span>
+              {i < items.length - 1 && (
+                <span aria-hidden className="h-3 w-px bg-red/30" />
+              )}
             </div>
           ))}
         </div>
