@@ -141,7 +141,7 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
               <span className="text-[11px] uppercase tracking-[0.35em] font-semibold text-red-bg">Рекомендация</span>
             </div>
             <p className="text-[14px] italic text-ink/50 mb-8 leading-relaxed">{quote.title}</p>
-            <p className="font-editorial text-[34px] leading-[1.3] text-ink">
+            <p className="font-sans font-light text-[34px] leading-[1.35] tracking-tight text-ink">
               {quote.body}
             </p>
             <div className="mt-12 pt-8 border-t border-ink/10 flex flex-col items-end">
