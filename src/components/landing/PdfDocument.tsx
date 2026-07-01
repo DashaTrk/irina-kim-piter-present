@@ -124,17 +124,30 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
       })}
 
       {/* Quote */}
-      <div data-pdf-page data-pdf-bg="#f5f2ed" className={`${PAGE} bg-milk text-ink px-16 pt-20`}>
-        <div className="text-[11px] uppercase tracking-[0.35em] text-red-bg mb-8 text-center">Рекомендация</div>
-        <div className="bg-ink text-paper p-14">
-          <div className="font-editorial text-[110px] leading-none text-red-bg -mb-4">“</div>
-          <div className="text-[12px] uppercase tracking-[0.3em] text-paper/70 mb-8">{quote.title}</div>
-          <p className="font-editorial italic text-[32px] leading-[1.3]">
-            {quote.body}
-          </p>
-          <div className="mt-10 border-t border-paper/15 pt-6 flex items-center justify-between">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-paper/60">Личная рекомендация</span>
-            <span className="font-editorial italic text-red-bg text-[56px] leading-none">”</span>
+      <div data-pdf-page data-pdf-bg="#f5f2ed" className={`${PAGE} bg-milk text-ink px-16 pt-24`}>
+        <div className="bg-paper relative overflow-hidden shadow-2xl border-t-[6px] border-red-bg p-14">
+          {/* Decorative background quote mark */}
+          <div className="absolute top-0 right-0 -mt-6 -mr-6 text-red-bg/[0.06] pointer-events-none select-none">
+            <svg width="120" height="120" viewBox="0 0 24 24" fill="#7f0905">
+              <path d="M14.017 21L14.017 18C14.017 16.8954 14.9125 16 16.0171 16H19.0171V14.0171L14.0171 14.0171L14.0171 10.0171L20.0171 10.0171L20.0171 18C20.0171 20.2091 18.2262 22 16.0171 22L14.0171 22L14.017 21ZM4.0171 21L4.0171 18C4.0171 16.8954 4.9125 16 6.0171 16H9.0171V14.0171L4.0171 14.0171L4.0171 10.0171L10.0171 10.0171L10.0171 18C10.0171 20.2091 8.2262 22 6.0171 22L4.0171 22L4.0171 21Z" />
+            </svg>
+          </div>
+          {/* Red accent corner */}
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-red-bg/[0.04] rounded-tr-full -ml-10 -mb-10" />
+
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="h-px w-10 bg-red-bg" />
+              <span className="text-[11px] uppercase tracking-[0.35em] font-semibold text-red-bg">Рекомендация</span>
+            </div>
+            <p className="text-[14px] italic text-ink/50 mb-8 leading-relaxed">{quote.title}</p>
+            <p className="font-editorial text-[34px] leading-[1.3] text-ink">
+              {quote.body}
+            </p>
+            <div className="mt-12 pt-8 border-t border-ink/10 flex flex-col items-end">
+              <span className="text-[11px] uppercase tracking-[0.35em] font-semibold text-red-bg">Личная рекомендация</span>
+              <span className="h-[3px] w-16 bg-red-bg mt-2" />
+            </div>
           </div>
         </div>
         <div className="absolute inset-x-14 bottom-8 flex items-end justify-between text-[10px] uppercase tracking-[0.3em] text-ink/50">
