@@ -94,25 +94,17 @@ function Index() {
 
   return (
     <main className="min-h-screen bg-ink text-paper font-sans overflow-x-hidden selection:bg-red selection:text-paper">
-      {/* Top bar */}
+      {/* Top bar — intentionally empty */}
       <header className="border-b border-paper/15 bg-ink/95 backdrop-blur sticky top-0 z-30">
-        <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-3.5 md:py-4 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
-          <div className="flex items-center gap-3 min-w-0">
-            <span className="h-2 w-2 rounded-full bg-red shrink-0" />
-            <span className="font-editorial text-[15px] md:text-lg truncate">Ирина Ким</span>
-          </div>
-          <span className="shrink-0 text-[9px] md:text-[10px] uppercase tracking-[0.35em] text-paper/60">
-            СПб · <span className="text-red">Новостройки</span>
-          </span>
-        </div>
+        <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-3.5 md:py-4 h-[44px]" />
       </header>
 
       {/* HERO */}
       <section className="relative border-b border-paper/15 bg-grain">
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 pt-10 md:pt-20 pb-14 md:pb-24 grid grid-cols-12 gap-8 md:gap-12 md:items-center">
           {/* Photo — perfect circle with red ring accent */}
-          <div className="col-span-12 md:col-span-5 md:order-2">
-            <div className="relative mx-auto w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px]">
+          <div className="col-span-12 md:col-span-5 md:order-2 flex justify-center">
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] mx-auto">
               {/* outer red ring */}
               <span
                 aria-hidden
