@@ -331,35 +331,42 @@ function Index() {
         </div>
       </section>
 
-      {/* 05 — QUOTE on milk */}
+      {/* 05 — QUOTE / testimonial */}
       <section className="bg-milk text-ink relative overflow-hidden">
-        <div className="max-w-[1120px] mx-auto px-5 md:px-12 py-20 md:py-32 relative text-center">
+        <div className="max-w-[1120px] mx-auto px-5 md:px-12 py-20 md:py-32 relative">
           <div className="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.4em] text-red-bg mb-10 md:mb-14">
             <span className="h-px w-8 bg-red-bg" />
             <span>Рекомендация</span>
             <span className="h-px w-8 bg-red-bg" />
           </div>
 
-          <p className="text-[13px] md:text-sm uppercase tracking-[0.3em] text-ink/60 mb-8 md:mb-10">
-            {quote.title}
-          </p>
-
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-4xl mx-auto bg-ink text-paper p-8 md:p-14 lg:p-16 shadow-2xl">
             <span
               aria-hidden
-              className="pointer-events-none absolute -top-8 md:-top-14 left-1/2 -translate-x-1/2 font-editorial italic text-red-bg/90 text-[100px] md:text-[160px] leading-[0.7] select-none"
+              className="absolute -top-3 left-6 md:left-10 font-editorial italic text-red-bg text-[100px] md:text-[160px] leading-[0.7] select-none"
             >
               “
             </span>
-            <p className="relative pt-16 md:pt-24 font-editorial italic text-[26px] sm:text-[34px] md:text-[46px] leading-[1.2] text-ink">
-              {quote.body}
-            </p>
-          </div>
 
-          <div className="mt-12 md:mt-16 flex items-center justify-center gap-4 text-[10px] uppercase tracking-[0.35em] text-ink/60">
-            <span className="h-px w-10 bg-red-bg" />
-            <span>Личная рекомендация</span>
-            <span className="h-px w-10 bg-red-bg" />
+            <p className="text-[13px] md:text-sm uppercase tracking-[0.3em] text-paper/60 mb-8 md:mb-10 pt-10 md:pt-12">
+              {quote.title}
+            </p>
+
+            <blockquote className="relative font-editorial italic text-[24px] sm:text-[30px] md:text-[42px] leading-[1.25] text-paper">
+              {quote.body}
+            </blockquote>
+
+            <div className="mt-10 md:mt-12 flex items-center justify-between gap-4 border-t border-paper/15 pt-6">
+              <span className="text-[10px] uppercase tracking-[0.35em] text-paper/60">
+                Личная рекомендация
+              </span>
+              <span
+                aria-hidden
+                className="font-editorial italic text-red-bg text-[48px] md:text-[64px] leading-none"
+              >
+                ”
+              </span>
+            </div>
           </div>
         </div>
       </section>

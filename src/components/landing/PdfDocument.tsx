@@ -124,16 +124,20 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
       })}
 
       {/* Quote */}
-      <div data-pdf-page data-pdf-bg="#7f0905" className={`${PAGE} bg-red-bg text-paper px-16 pt-20`}>
-        <div className="text-[11px] uppercase tracking-[0.35em] text-paper/70 mb-8">Рекомендация</div>
-        <div className="font-editorial text-[130px] leading-none mt-2 opacity-30">“</div>
-        <p className="font-editorial italic text-[38px] leading-[1.25] max-w-[640px] -mt-6">
-          {quote.body}
-        </p>
-        <div className="mt-12 text-[13px] uppercase tracking-[0.3em] text-paper/80">
-          {quote.title}
+      <div data-pdf-page data-pdf-bg="#f5f2ed" className={`${PAGE} bg-milk text-ink px-16 pt-20`}>
+        <div className="text-[11px] uppercase tracking-[0.35em] text-red-bg mb-8 text-center">Рекомендация</div>
+        <div className="bg-ink text-paper p-14">
+          <div className="font-editorial text-[110px] leading-none text-red-bg -mb-4">“</div>
+          <div className="text-[12px] uppercase tracking-[0.3em] text-paper/70 mb-8">{quote.title}</div>
+          <p className="font-editorial italic text-[32px] leading-[1.3]">
+            {quote.body}
+          </p>
+          <div className="mt-10 border-t border-paper/15 pt-6 flex items-center justify-between">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-paper/60">Личная рекомендация</span>
+            <span className="font-editorial italic text-red-bg text-[56px] leading-none">”</span>
+          </div>
         </div>
-        <div className="absolute inset-x-14 bottom-8 flex items-end justify-between text-[10px] uppercase tracking-[0.3em] text-paper/60">
+        <div className="absolute inset-x-14 bottom-8 flex items-end justify-between text-[10px] uppercase tracking-[0.3em] text-ink/50">
           <span>Ирина Ким · Эксперт по новостройкам СПб</span>
           <span>{String(nextPage()).padStart(2, "0")} / {String(total).padStart(2, "0")}</span>
         </div>
