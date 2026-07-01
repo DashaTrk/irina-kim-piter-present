@@ -40,23 +40,36 @@ function SectionHead({
   );
 }
 
-/** Static keyword strip — high-contrast, readable. */
-function KeywordStrip({ items }: { items: string[] }) {
+/** Section index strip — clean list of all page blocks. */
+function SectionIndex() {
+  const items = [
+    { num: "01", label: "Главная" },
+    { num: "02", label: "Философия" },
+    { num: "03", label: "Аудитория" },
+    { num: "04", label: "Результат" },
+    { num: "05", label: "Метод" },
+    { num: "06", label: "Преимущества" },
+    { num: "07", label: "Рекомендация" },
+    { num: "08", label: "Контакты" },
+  ];
+
   return (
-    <div className="border-y border-paper/15 bg-ink/60">
-      <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-4 md:py-5 flex flex-wrap items-center justify-center gap-x-6 md:gap-x-8 gap-y-2 text-center">
-        {items.map((it, i) => (
-          <span key={it} className="flex items-center gap-x-6 md:gap-x-8">
-            <span className="font-sans text-paper/95 text-[13px] md:text-[15px] uppercase tracking-[0.22em] font-medium">
-              {it}
-            </span>
-            {i < items.length - 1 && (
-              <span aria-hidden className="text-red text-[10px]">◆</span>
-            )}
-          </span>
-        ))}
+    <nav className="border-y border-paper/10 bg-ink">
+      <div className="max-w-[1320px] mx-auto px-5 md:px-12 py-5 md:py-6">
+        <div className="flex flex-wrap justify-center gap-x-4 md:gap-x-8 gap-y-3">
+          {items.map((item) => (
+            <div key={item.label} className="flex items-center gap-2">
+              <span className="font-editorial italic text-red text-[13px] md:text-[14px] leading-none">
+                {item.num}
+              </span>
+              <span className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-paper/70">
+                {item.label}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </nav>
   );
 }
 
