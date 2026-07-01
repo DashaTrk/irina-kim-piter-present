@@ -77,8 +77,9 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
         <h2 className="font-editorial text-[56px] leading-[1.05] max-w-[620px]">
           Квартира — не про <span className="italic">метры</span>,
           <br />
-          <span className="italic">а про </span>
-          <span className="italic text-red">образ жизни</span>.
+          <span className="">а про </span>
+          <span className="italic text-red">образ жизни</span>
+          <span className="text-red">.</span>
         </h2>
         <div className="mt-14 grid grid-cols-2 gap-12 max-w-[640px]">
           <p className="text-[17px] leading-[1.6]">
