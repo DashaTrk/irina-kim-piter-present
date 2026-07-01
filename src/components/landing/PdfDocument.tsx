@@ -102,7 +102,7 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
               </div>
               <div className="mt-10 grid grid-cols-2 gap-5">
                 {s.items.map((it, i) => (
-                  <div key={i} className="bg-ink border border-paper/10 p-6">
+                  <div key={i} className="bg-gradient-to-b from-ink/95 via-ink/85 to-ink/70 border border-paper/10 p-6 shadow-[0_0_40px_-10px_rgba(0,0,0,0.55)]">
                     <div className="flex gap-4">
                       <span className="font-editorial italic text-red text-2xl">{String(i + 1).padStart(2, "0")}</span>
                       <p className="text-[16px] leading-[1.5] text-paper pt-1">{it}</p>
