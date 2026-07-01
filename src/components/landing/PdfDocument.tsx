@@ -114,29 +114,24 @@ export const PdfDocument = forwardRef<HTMLDivElement>((_props, ref) => {
         <h2 className="font-editorial text-[64px] leading-[1.02]">
           Давайте <span className="italic text-red">познакомимся</span>
         </h2>
-        <div className="mt-12 flex gap-10 items-start">
-          <div className="w-[220px] h-[280px] overflow-hidden shrink-0">
-            <img src={irinaAsset.url} alt="" crossOrigin="anonymous" className="w-full h-full object-cover" />
-          </div>
-          <div className="flex-1 pt-2">
-            <div className="font-editorial text-[32px]">{contacts.name}</div>
-            <div className="text-[12px] uppercase tracking-[0.3em] text-ink/60 mt-1">{contacts.role}</div>
-            <Rule className="mt-8" />
-            <dl className="mt-8 space-y-6 text-[17px]">
-              <div className="flex justify-between gap-6">
-                <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Телефон</dt>
-                <dd className="flex-1 font-editorial text-[22px]">{contacts.phone}</dd>
-              </div>
-              <div className="flex justify-between gap-6">
-                <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Instagram</dt>
-                <dd className="flex-1 font-editorial text-[22px]">{contacts.instagram}</dd>
-              </div>
-              <div className="flex justify-between gap-6">
-                <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Telegram</dt>
-                <dd className="flex-1 font-editorial text-[22px]">{contacts.telegram}</dd>
-              </div>
-            </dl>
-          </div>
+        <div className="mt-12 max-w-2xl">
+          <div className="font-editorial text-[32px]">{contacts.name}</div>
+          <div className="text-[12px] uppercase tracking-[0.3em] text-ink/60 mt-1">{contacts.role}</div>
+          <Rule className="mt-8" />
+          <dl className="mt-8 space-y-6 text-[17px]">
+            <div className="flex justify-between gap-6">
+              <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Телефон</dt>
+              <dd className="flex-1 font-editorial text-[22px]">{contacts.phone}</dd>
+            </div>
+            <div className="flex justify-between gap-6">
+              <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Instagram</dt>
+              <dd className="flex-1 font-editorial text-[22px]">{contacts.instagram}</dd>
+            </div>
+            <div className="flex justify-between gap-6">
+              <dt className="uppercase tracking-[0.25em] text-[11px] text-ink/60 w-32 pt-1">Telegram</dt>
+              <dd className="flex-1 font-editorial text-[22px]">{contacts.telegram}</dd>
+            </div>
+          </dl>
         </div>
         <PageChrome page={nextPage()} total={total} />
       </div>
