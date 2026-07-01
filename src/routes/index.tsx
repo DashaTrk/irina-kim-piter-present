@@ -215,7 +215,7 @@ function Index() {
               kicker="Результат"
               title={<>Что <span className="italic text-red">получает</span> клиент</>}
             />
-            <p className="mt-6 md:mt-8 text-[15px] md:text-base leading-[1.65] text-paper/70 max-w-sm">
+            <p className="mt-6 md:mt-8 text-[18px] md:text-[22px] leading-[1.45] text-paper/90 max-w-sm font-editorial">
               Уже на первой встрече формируется ясная картина: районы, ЖК, расчёты и понятный порядок действий.
             </p>
           </div>
